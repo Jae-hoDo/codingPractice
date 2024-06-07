@@ -18,25 +18,25 @@ import java.util.Collections;
 @Table(name = "user")
 public class User implements UserDetails {
     @Id
-    @Column(name = "user_id", length = 100)
+    @Column(name = "user_id", length = 50)
     private String userId;
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     private String password;
-    @Column(name = "birthday")
+    @Column(name = "birthday", nullable = false)
     private LocalDate birthday;
-    @Column(name = "email", length = 255, nullable = false)
+    @Column(name = "user_email", length = 100)
     private String email;
     @Column(name="date_joined", updatable = false)
     private LocalDateTime dateJoined;
-    @Column(name = "user_name", length = 255, nullable = false)
+    @Column(name = "user_name", nullable = false, length = 50)
     private String userName;
     @ManyToOne
-    @JoinColumn(name = "user_authority", referencedColumnName = "authority_name")
+    @JoinColumn(name = "authority")
     private Authority authority;
     @Enumerated(EnumType.STRING)
-    private Gender gender;
+    private GenderEnum gender;
 
-    public enum Gender {
+    public enum GenderEnum {
         MALE,
         FEMALE;
     }
