@@ -3,6 +3,8 @@ package dw.movieDic.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -20,4 +22,6 @@ public class Purchase {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+    @Column(name = "purchase_time")
+    private LocalDateTime purchaseTime;
 }
