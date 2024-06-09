@@ -20,20 +20,28 @@ public class User implements UserDetails {
     @Id
     @Column(name = "user_id", length = 50)
     private String userId;
+
     @Column(name = "password", nullable = false)
     private String password;
+
     @Column(name = "birthday", nullable = false)
     private LocalDate birthday;
-    @Column(name = "user_email", length = 100)
+
+    @Column(name = "user_email", nullable = false, unique = true, length = 100)
     private String email;
-    @Column(name="date_joined", updatable = false)
+
+    @Column(name="date_joined", nullable = false, updatable = false)
     private LocalDateTime dateJoined;
+
     @Column(name = "user_name", nullable = false, length = 50)
     private String userName;
+
     @ManyToOne
-    @JoinColumn(name = "authority")
+    @JoinColumn(name = "authority", nullable = false)
     private Authority authority;
+
     @Enumerated(EnumType.STRING)
+    @Column(name = "gender", nullable = false)
     private GenderEnum gender;
 
     public enum GenderEnum {

@@ -18,7 +18,7 @@ public class Purchase {
     private long purchaseId;
     @ManyToOne
     @JoinColumn(name = "lecture_id")
-    private Lecture lecture;
+    private Lectures lectures;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

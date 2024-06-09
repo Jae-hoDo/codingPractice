@@ -11,6 +11,6 @@ import lombok.*;
 @Table(name = "authority")
 public class Authority {
     @Id
-    @Column(name = "authority_name", length = 50)
+    @Column(name = "authority_name", nullable = false, unique = true, length = 50)
     private String authorityName;
 }
