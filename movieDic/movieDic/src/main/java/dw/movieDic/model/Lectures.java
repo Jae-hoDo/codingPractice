@@ -34,10 +34,4 @@ public class Lectures {
 
     @Column(name = "lecture_url", nullable = false, length = 255)
     private String lectureUrl;
-
-    @OneToMany(mappedBy = "lecture")
-    private Set<Review> reviews;
-
-    @OneToMany(mappedBy = "lecture")
-    private Set<Purchase> purchases;
 }
