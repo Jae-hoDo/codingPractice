@@ -4,33 +4,34 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Entity
-@Table(name = "review")
-public class Review {
+@Table(name = "comment")
+public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "review_id")
-    private long reviewId;
+    @Column(name = "comment_id")
+    private long commentId;
 
     @ManyToOne
-    @JoinColumn(name = "lecture_id", nullable = false)
-    private Lectures lecture;
+    @JoinColumn(name = "post_id", nullable = false)
+    private Post post;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(name = "rating", nullable = false)
-    private int rating;
-
-    @Column(name = "review_text", nullable = false, length = 65535)
-    private String reviewText;
+    @Column(name = "comment_content", nullable = false, length = 1000)
+    private String commentContent;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
+
+    @OneToMany(mappedBy = "comment")
+    private Set<Like> likes;
 }

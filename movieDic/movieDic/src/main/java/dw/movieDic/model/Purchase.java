@@ -16,12 +16,15 @@ public class Purchase {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "purchase_id")
     private long purchaseId;
+
     @ManyToOne
-    @JoinColumn(name = "lecture_id")
-    private Lectures lectures;
+    @JoinColumn(name = "lecture_id", nullable = false)
+    private Lectures lecture;
+
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
-    @Column(name = "purchase_time")
+
+    @Column(name = "purchase_time", nullable = false)
     private LocalDateTime purchaseTime;
 }

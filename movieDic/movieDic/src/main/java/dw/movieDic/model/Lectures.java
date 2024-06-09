@@ -17,8 +17,8 @@ public class Lectures {
     @Column(name = "lecture_id")
     private Long lectureId;
 
-    @Column(name = "title", nullable = false, length = 200)
-    private String title;
+    @Column(name = "lecture_title", nullable = false, length = 200)
+    private String lectureTitle;
 
     @Column(name = "major", nullable = false, length = 100)
     private String major;
@@ -26,12 +26,12 @@ public class Lectures {
     @Column(name = "price", nullable = false)
     private double price;
 
-    @Column(name = "image", nullable = false, length = 255)
+    @Column(name = "image", nullable = false, length = 65535)
     private String image;
 
-    @Column(name = "text", nullable = false, columnDefinition = "TEXT")
+    @Column(name = "description_text", length = 65535)
     private String text;
 
-    @Column(name = "lecture_url", nullable = false, length = 255)
+    @Column(name = "lecture_url", nullable = false, length = 65535)
     private String lectureUrl;
 }
