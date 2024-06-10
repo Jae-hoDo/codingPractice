@@ -9,7 +9,6 @@ let password = "";
 let userName = "";
 let userEmail = "";
 let gender = "";
-let age = 0;
 let birthday = "";
 
 // document.querySelector("#userId2").addEventListener("change", (e) => {
@@ -21,7 +20,7 @@ let birthday = "";
 
 document.querySelector("#userId").addEventListener("change", (e) => {
   console.log(e.target.value);
-  password = e.target.value;
+  userId = e.target.value;
 });
 
 document.querySelector("#password").addEventListener("change", (e) => {
@@ -55,10 +54,7 @@ document.querySelector("#userEmail").addEventListener("change", (e) => {
   console.log(e.target.value);
   userEmail = e.target.value;
 });
-document.querySelector("#age").addEventListener("change", (e) => {
-  console.log(e.target.value);
-  age = e.target.value;
-});
+
 document.querySelector("#birthday").addEventListener("change", (e) => {
   console.log(e.target.value);
   birthday = e.target.value;
@@ -76,7 +72,6 @@ document.querySelector(".register").addEventListener("click", () => {
     userName: userName,
     userEmail: userEmail,
     gender: gender,
-    age: age,
     birthday,
   };
   axios
@@ -85,12 +80,11 @@ document.querySelector(".register").addEventListener("click", () => {
       console.log("데이터 :", response);
       if (response.status == 201) {
         alert("회원가입 완료");
-        document.querySelector("#userId2").value = "";
-        document.querySelector("#password2").value = "";
+        document.querySelector("#userId").value = "";
+        document.querySelector("#password").value = "";
         document.querySelector("#userName").value = "";
         document.querySelector("#userEmail").value = "";
-        document.querySelector(".signUp-box").classList.add("hidden");
-        document.querySelector(".login-box").classList.remove("hidden");
+
       }
     })
     .catch((error) => {
