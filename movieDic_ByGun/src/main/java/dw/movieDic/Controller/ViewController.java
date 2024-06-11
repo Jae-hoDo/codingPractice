@@ -45,4 +45,8 @@ public class ViewController {
     public String team(){
         return "team";
     }
+    @GetMapping("/movieDic/write.html")
+    public String write(){
+        return "write";
+    }
 }
