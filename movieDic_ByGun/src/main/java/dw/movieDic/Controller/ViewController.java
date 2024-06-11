@@ -37,4 +37,8 @@ public class ViewController {
     public String myPage(){
         return "myPage";
     }
+    @GetMapping("/movieDic/board.html")
+    public String board(){
+        return "board";
+    }
 }
