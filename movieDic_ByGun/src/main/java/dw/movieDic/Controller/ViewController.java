@@ -41,4 +41,8 @@ public class ViewController {
     public String board(){
         return "board";
     }
+    @GetMapping("/movieDic/team.html")
+    public String team(){
+        return "team";
+    }
 }
