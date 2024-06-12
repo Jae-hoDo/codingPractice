@@ -17,6 +17,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+/* 'SecurityConfig'는 애플리케이션의 보안 설정을 구성합니다. @configuration은 이 클래스가 Spring의 설정
+클래스임을 나타냅니다. @EnableWebSecurity은 Spring Security 설정을 활성화 합니다. @Autowired는 필요한
+빈(Bean)을 자동으로 주입합니다.
+'SecurityFilterChain filterChain(HttpSecurity http) throws Exception'은 보안 필터 체인을 구성합니다.
+
+*/
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {

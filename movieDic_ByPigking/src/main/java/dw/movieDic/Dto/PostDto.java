@@ -9,7 +9,6 @@ import lombok.*;
 @Getter
 @Setter
 public class PostDto {
-    private long postId;
     private long boardId;
     private String userId;
     private String postTitle;
@@ -17,7 +16,6 @@ public class PostDto {
 
     public PostDto toPostDtoFromPost(Post post) {
         PostDto postDto = new PostDto();
-        postDto.setPostId(getPostId());
         postDto.setBoardId(getBoardId());
         postDto.setUserId(getUserId());
         postDto.setPostTitle(getPostTitle());
