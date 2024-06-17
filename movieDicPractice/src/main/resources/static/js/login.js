@@ -9,6 +9,63 @@ let password = "";
 let userName = "";
 let userEmail = "";
 
+document.addEventListener("DOMContentLoaded", function () {
+  sessionCheckForLogout();
+});
+
+function sessionCheckForLogout() {
+  axios
+    .get("http://localhost:8080/user/current", { withCredentials: true })
+    .then((response) => {
+      console.log("데이터:", response.data);
+      if (response.status == 200) {
+        const userId = response.data.userId;
+        const authority = response.data.authority[0].authority;
+        sessionStorage.setItem(
+          "userInfo",
+          JSON.stringify({ userId, authority })
+        );
+
+        // 사용자가 로그인한 상태일 때 로그아웃 버튼 표시
+        const logoutBtn = document.getElementById("logoutBtn");
+        logoutBtn.classList.remove("hidden"); // hidden 클래스 제거
+        logoutBtn.addEventListener("click", logout);
+      }
+    })
+    .catch((error) => {
+      console.log("에러 발생:", error);
+      alert("로그인해주세요.");
+    });
+}
+
+function logout() {
+  // 여기에 로그아웃 처리 코드 추가
+  console.log("로그아웃 버튼 클릭");
+  // 예시: 세션 정보 제거
+  sessionStorage.removeItem("userInfo");
+  // 예시: 로그아웃 API 호출 등
+  // axios.post("http://localhost:8080/logout", { withCredentials: true });
+  // 페이지 리로드 등 추가 작업
+  location.reload();
+}
+
+document.querySelector(".logoutBtn").addEventListener("click", () => {
+  if (confirm("로그아웃하시겠습니까?")) {
+    axios
+      .post(urlLogout, {}, { withCredentials: true })
+      .then((response) => {
+        console.log("데이터:", response);
+        if (response.status == 200) {
+          document.querySelector(".login-box").classList.remove("hidden");
+          document.querySelector(".user-box").classList.add("hidden");
+        }
+      })
+      .catch((error) => {
+        console.log("에러 발생:", error);
+      });
+  }
+});
+
 // input내용 담기
 document.querySelector("#userId").addEventListener("change", (e) => {
   console.log(e.target.value);
@@ -71,6 +128,7 @@ document.querySelector(".loginBtn").addEventListener("click", () => {
       document.querySelector("#password").value = "";
       document.querySelector("#userId").style.border = `2px solid #00d1fe;`;
       document.querySelector("#password").style.border = `2px solid #00d1fe;`;
+      location.reload();
     })
     .catch((error) => {
       console.log("에러발생 : ", error);
@@ -168,7 +226,7 @@ function sessionCurrent() {
       if (response.status == 200) {
         console.log("세션 유지");
         // 로그인 성공 시 아래 주소로 이동(메인화면 완성되면 바꿀 것!)
-        // window.location.href = "index.html";
+        location.reload();
 
         // 로그인 했을때 login-box와 전환되면서 나오는 박스
         // 해당기능도 0610기준 필요없어서 주석처리함
@@ -208,4 +266,4 @@ function sessionCurrent() {
 // }
 
 // js 파일이 로드될 때 호출됨
-sessionCurrent();
+// sessionCurrent();
