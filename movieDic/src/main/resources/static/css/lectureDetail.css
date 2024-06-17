@@ -1,0 +1,305 @@
+@font-face {
+  font-family: "GyeonggiTitleM";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiTitleM.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 헤더css시작 */
+
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  border-bottom: 1px solid #00d1fe;
+  justify-content: space-around;
+}
+
+.logo {
+  width: 200px;
+  height: 100px;
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu > ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  width: 700px;
+}
+
+.menu > ul > li {
+  line-height: 100px;
+}
+
+.menu > ul > li > a:hover {
+  color: #00d1fe;
+}
+
+.menu > ul > li > a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  color: #333;
+}
+
+.top-Icon {
+  width: 200px;
+  height: 100px;
+  display: flex;
+}
+
+.top-Icon ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-Icon li {
+  list-style: none;
+  width: 60px;
+  height: 60px;
+  opacity: 0.7;
+}
+
+.top-Icon li:hover{
+  opacity: 1;
+}
+
+.top-Icon img {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+}
+
+/* 헤더 css끝 */
+
+.mainLacture {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 8%;
+}
+
+.title {
+  height: fit-content;
+  width: 50%;
+  text-align: start;
+  font-size: 120%;
+  margin: 0 auto;
+}
+
+.title h1 {
+  margin: 0 auto;
+}
+
+.price {
+  width: 200px;
+  height: fit-content;
+  margin-top: 80px;
+  margin-bottom: 20px;
+  padding-right: 20%;
+  text-align: right;
+  float: right;
+}
+
+/* js에 따른 추가 css(수정요망); */
+
+.contents {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: center;
+}
+
+.contents p {
+  width: auto;
+  height: auto;
+  color: #00deff;
+  font-family: "GmarketSansMedium";
+  margin-bottom: 20px;
+}
+
+.lecture {
+  width: 1000px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #333;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  padding: 30px;
+  align-items: center;
+}
+
+.lecture:hover {
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.4);
+  transform: translate(0px, -5px);
+  filter: brightness(120%);
+  cursor: pointer;
+}
+
+.low-box{
+  border-left: 2px dashed #00d1fe;
+  display: flex;
+  width: auto;
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 50px;
+}
+
+.low-box>div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.low-box>div:first-child{
+  align-items: start;
+  flex-direction: column;
+}
+
+.image {
+  width: 600px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.button {
+  height: 50px;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 50px;
+}
+
+.courseBtn {
+  width: calc(20% - 20px);
+  height: 50px;
+  background-color: #00deff;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+  margin-right: 10px;
+}
+
+.cart-btn{
+  width: 200px;
+  height: 50px;
+  background-color: #00deff;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  border: none;
+  font-family: "GyeonggiTitleM";  
+}
+
+.comment {
+  width: 800px;
+  height: 600px;
+  background-color: #d9d9d9;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-bottom: 200px;
+}
+
+.comment h1 {
+  height: 100px;
+}
+
+.commentBox {
+  width: 660px;
+  height: 400px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+
+
+/* 푸터 css시작 */
+
+footer {
+  width: 100%;
+  background-color: #666;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+}
+
+.information {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.information h4 {
+  color: #fff;
+  font-size: 25px;
+  padding: 20px;
+  width: 400px;
+  height: 25px;
+}
+
+.information span {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  color: #fff;
+  width: 400px;
+  height: 200px;
+}
+
+/* 푸터 css 끝 */
