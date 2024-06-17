@@ -54,7 +54,7 @@ public class ViewController {
         return "team";
     }
     @GetMapping("/movieDic/lecture.html")
-    public String lecture(){
+    public String                lecture(){
         return "lecture";
     }
     @GetMapping("/movieDic/lectureDetail.html")
@@ -76,5 +76,9 @@ public class ViewController {
     @GetMapping("/movieDic/event.html")
     public String event(){
         return "event";
+    }
+    @GetMapping("/movieDic/dashboard.html")
+    public String dashboard(){
+        return "dashboard";
     }
 }

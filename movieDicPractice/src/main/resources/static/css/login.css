@@ -100,7 +100,7 @@ header {
   opacity: 0.7;
 }
 
-.top-Icon li:hover {
+.top-Icon li:hover{
   opacity: 1;
 }
 
@@ -258,11 +258,6 @@ input:focus {
   font-size: 15px;
   border: 2px solid #00d1fe;
   margin-left: 10px;
-}
-
-/* 0617 수정 - 도재호 */
-.hidden {
-  display: none;
 }
 
 /* 푸터 css시작 */
