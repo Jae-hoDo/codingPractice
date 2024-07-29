@@ -17,10 +17,10 @@ public class ProductController {
     ProductController(SimpleProductService simpleProductService) {
         this.simpleProductService = simpleProductService;
     }
-    
+
     @RequestMapping(value = "/products", method = RequestMethod.POST)
     public Product createProduct(@RequestBody Product product) {
         // Product를 생성하고 리스트에 넣는 작업이 필요함.
-        return product;
+        return simpleProductService.add(product);
     }
 }
