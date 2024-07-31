@@ -20,5 +20,9 @@ public class BookService {
         return bookRepository.findAll();
     }
     
-    
+    public Book addBook(Book book) {
+        if (bookRepository.existsById(book.getISBN())) {
+            throw new IllegalStateException("테이블 내 중복되는 값이 있습니다.")
+        }
+    }
 }
