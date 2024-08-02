@@ -1,4 +1,4 @@
-package dw.bookManagementSystem;
+package dw.BookManagementSystem;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
