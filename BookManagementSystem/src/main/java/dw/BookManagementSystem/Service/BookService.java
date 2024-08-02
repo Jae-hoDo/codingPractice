@@ -29,7 +29,6 @@ public class BookService {
                 return bookRepository.save(updatedBook);
             } else {
                 Book bookToUpdate = existingBook.get();
-                bookToUpdate.setIsbn(updatedBook.getIsbn());
                 bookToUpdate.setTitle(updatedBook.getTitle());
                 bookToUpdate.setAuthor(updatedBook.getAuthor());
                 bookToUpdate.setYearPublication(updatedBook.getYearPublication());
