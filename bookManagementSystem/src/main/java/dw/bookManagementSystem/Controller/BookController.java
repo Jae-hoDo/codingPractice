@@ -23,4 +23,14 @@ public class BookController {
         return new ResponseEntity<>(bookService.getAllBooks(),
                 HttpStatus.OK);
     }
+
+    @PutMapping("/{isbn}")
+    public ResponseEntity<Book> updateBook(@PathVariable String isbn, @RequestBody Book updatedBook) {
+        Book result = bookService.updateBook(isbn, updatedBook);
+        if (result != null) {
+            return new ResponseEntity<>(result, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 }
